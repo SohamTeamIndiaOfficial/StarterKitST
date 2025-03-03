@@ -38,6 +38,11 @@ func reset_to_defualts():
 	GameSettings.main_volume = 100
 	GameSettings.music_volume = 100
 	
+	#RESET OTHER
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	AudioServer.set_bus_volume_db(0, linear_to_db(GameSettings.main_volume/100))
+	AudioServer.set_bus_volume_db(0, linear_to_db(GameSettings.music_volume/100))
+	
 	update_all_visual()
 
 func _unhandled_input(event):
@@ -56,9 +61,17 @@ func toggle_crouch_changed(toggled_on):
 
 #TAB2
 func window_mode_changed(index):
-	pass # Replace with function body.
+	if index == 0:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	elif index == 1:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	elif index == 2:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 func vsync_toggled(toggled_on):
-	pass # Replace with function body.
+	if toggled_on:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 func show_fps_toggled(toggled_on):
 	GameSettings.show_fps = toggled_on
 func fov_changed(value):
@@ -69,9 +82,11 @@ func fov_changed(value):
 #TAB4
 func main_volume_changed(value):
 	GameSettings.main_volume = value
+	AudioServer.set_bus_volume_db(0, linear_to_db(value/100))
 func music_volume_changed(value):
 	GameSettings.music_volume = value
+	AudioServer.set_bus_volume_db(1, linear_to_db(value/100))
 
 #TAB5
-func game_language_changed(index):
+func game_language_changed(_index):
 	pass # Replace with function body.
