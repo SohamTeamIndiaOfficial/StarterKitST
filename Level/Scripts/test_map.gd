@@ -22,3 +22,6 @@ func _on_power_director_button_pressed():
 
 func _on_hand_scanner_right_3_scan_success():
 	Grabpack.remove_hand("RedHand")
+
+func _on_button_2_pressed():
+	Game.load_scene("res://Objects/Gameplay/Extra/Scripts/data_space.tscn")

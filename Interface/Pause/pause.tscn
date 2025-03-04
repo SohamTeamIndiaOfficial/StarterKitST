@@ -130,6 +130,7 @@ script = ExtResource("1_tymi6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
@@ -140,6 +141,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_sa6jc")
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 98.0
 offset_top = 10.0
 offset_right = 361.0
@@ -152,6 +154,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Seperator" type="HSeparator" parent="."]
+layout_mode = 0
 offset_top = 85.0
 offset_right = 314.0
 offset_bottom = 89.0
