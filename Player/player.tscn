@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://dkty77argxwyc"]
+[gd_scene load_steps=158 format=4 uid="uid://dkty77argxwyc"]
 
 [ext_resource type="Texture2D" uid="uid://cl7alwgeec33w" path="res://Player/Grabpack/Models/grabpack_chapter_3_-_poppy_playtime_0.png" id="1_00tjw"]
 [ext_resource type="Script" uid="uid://dkgdss1i1qci7" path="res://Player/player.gd" id="1_od3ui"]
@@ -68,6 +68,7 @@
 [ext_resource type="AudioStream" uid="uid://c7wgcc6jimvtc" path="res://Interface/MainMenu/Sound/SW_SFX_Menu_Forward.wav" id="64_x0uyb"]
 [ext_resource type="AudioStream" uid="uid://40v5446yti4l" path="res://Interface/Inventory/Sound/SW_SFX_Inventory_SwitchTabs_01.wav" id="65_68syb"]
 [ext_resource type="Script" uid="uid://ctiwownyjmlkt" path="res://Player/Grabpack/hook_controller.gd" id="67_x0uyb"]
+[ext_resource type="PackedScene" uid="uid://dgwhev5imypr8" path="res://Interface/Pause/pause.tscn" id="68_pqfba"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eecr6"]
 resource_name = "MI_GrabpackOriginal"
@@ -4997,6 +4998,9 @@ stream = ExtResource("64_x0uyb")
 
 [node name="Switch" type="AudioStreamPlayer" parent="UI/inventory"]
 stream = ExtResource("65_68syb")
+
+[node name="Pause" parent="UI" instance=ExtResource("68_pqfba")]
+visible = false
 
 [node name="HookController" type="Node" parent="." node_paths=PackedStringArray("hook_raycast", "player_body")]
 script = ExtResource("67_x0uyb")
