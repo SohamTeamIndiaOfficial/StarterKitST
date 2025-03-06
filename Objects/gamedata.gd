@@ -45,4 +45,4 @@ func reset_checkpoint():
 
 func load_checkpoint():
 	#ADD YOUR LOAD CHECKPOINT CODE HERE
-	pass
+	load_scene("res://Level/test_map.tscn")
